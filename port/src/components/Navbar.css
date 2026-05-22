@@ -1,0 +1,12 @@
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    background-color:black;
+}
+.nav-links{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: space-evenly;
+    gap:5px;
+}
