@@ -1,0 +1,43 @@
+.portfolio-page header{
+  background:white;
+  color: rgb(217, 119, 87);
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding:5px;
+  margin:0;
+  padding-bottom:0px;
+}
+.portfolio-page header h1 p{
+  justify-content: center;
+  align-items:center;
+}
+
+.portfolio-page .box{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  border:2px solid black;
+  height:300px;
+  width:1000px;
+  padding:10px;
+  align-items: row;
+}
+.portfolio-page .box:hover{
+  transform:scalex(1.1);
+  transition:2s;
+}
+
+.portfolio-page .image{
+  display:flex;
+  flex-direction:row;
+  align-items: flex-start;
+  border:2px solid black;
+
+}
+.portfolio-page .image img{
+  width:200px;
+  height:auto;
+  display:block;
+}
