@@ -2,6 +2,7 @@ import './App.css'
 function App() {
   return (
     <>
+    <div className='App'>
     <header>
       <div>
         <h1>Avneet Aurora</h1>
@@ -21,6 +22,7 @@ function App() {
         </div>
         <button><a href='./portfolio'>View All</a></button>
     </main>
+    </div>
     </>
   )
 }

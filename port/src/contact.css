@@ -1,0 +1,39 @@
+.contact-page header{
+  background:linear-gradient(135deg,white,orange);
+  color: rgb(217, 119, 87);
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding:5px;
+  margin:0;
+  padding-bottom:0px;
+}
+.contact-page main{
+  background-image: url('/paper-bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  color: rgb(217, 119, 87);
+  display:flex;
+  flex-direction:column;
+  margin:10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top:0px;
+}
+
+.Contact-Form{
+    background-color:white;
+    display:flex;
+    flex-direction:column;
+    padding:25px;
+    border:2px solid black;
+}
+.Contact-Form button{
+  margin-top:10px;
+}
+.Contact-Form h3{
+    align-content: center;
+}
