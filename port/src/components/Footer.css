@@ -1,6 +1,12 @@
 footer{
     display: flex;
-    flex-direction: column;
-    background-color: black;
+    flex-direction: row;
+    background-color:black;
     color:white;
+    justify-content: space-around;
+    padding:0px;
+}
+
+.admin{
+   justify-content: flex-start;
 }
