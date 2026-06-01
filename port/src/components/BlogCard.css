@@ -1,0 +1,20 @@
+.card{
+  background-color: white;
+  display:flex;
+  flex-direction:row;
+  border:2px solid black;
+  height:300px;
+  width:800px;
+  padding:15px;
+}
+.card img{
+  height:300px;
+  width:300px;
+}
+.card .description{
+  display:flex;
+  flex: 1;
+  flex-direction: column;
+  padding-left:20px;
+  justify-content: flex-start;
+}

@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 const router = express.Router()
 //Contact Route
+const resend = new Resend(process.env.RESEND_API_KEY)
 router.post('/api/contact', async (req,res)=>{
     const {name, email, subject, message} = req.body
     console.log("Recieved message")
@@ -18,7 +19,7 @@ router.post('/api/contact', async (req,res)=>{
 
 //Blogs
 router.get('/blogs', (req,res)=>{
-        
+
 })
 
 export default router

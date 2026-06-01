@@ -17,13 +17,11 @@
 .portfolio-page .box{
   background-color: white;
   display:flex;
-  flex-wrap:wrap;
   flex-direction:row;
   border:2px solid black;
   height:325px;
   width:1000px;
   padding:15px;
-  align-items: row;
 }
 .portfolio-page .box:hover{
   transform:scalex(1.05);

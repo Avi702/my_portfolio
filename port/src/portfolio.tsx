@@ -20,8 +20,7 @@ function portfolio(){
                 </div>
                 <div className ="description">
                     <h3>SquatBuddy</h3>
-                    <p> using an LSTM Autoencoder to analyze squat form frame-by-frame
-from raw video</p>
+                    <p> using an LSTM Autoencoder to analyze squat form frame-by-frame from raw video</p>
                     <a href="https://devpost.com/software/squatbuddy">Link to Devpost</a>
                 </div>
             </div>

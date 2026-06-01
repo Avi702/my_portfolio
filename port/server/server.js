@@ -6,7 +6,6 @@ import dotenv from 'dotenv'
 dotenv.config()
 const app = express()
 const PORT = 8000
-const resend = new Resend(process.env.RESEND_API_KEY)
 app.use(cors())
 app.use(express.json())
 

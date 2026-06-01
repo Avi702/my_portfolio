@@ -8,7 +8,7 @@ import About from './about'
 import Footer from './components/Footer'
 import Portfolio from './portfolio'
 import Contact from './contact'
-import Blog from './blog'
+import Blog from './Blog'
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Navbar />
