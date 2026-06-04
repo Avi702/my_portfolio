@@ -1,5 +1,7 @@
 import './Footer.css'
+import {useAuth} from '../admin/useAuth'
 function Footer(){
+    const {isAdmin,logout} = useAuth()
     return (
     <>
     <footer>
@@ -9,7 +11,9 @@ function Footer(){
         <p><a href="https://www.github.com/avi702"></a>Github</p>
         <p>Email: avneet.sehgal72@gmail.com</p>
         </div>
-        <div className = "admin"><p>Admin Log In</p></div>
+
+        {!isAdmin && <div><a href = "./admin/AdminLogin">Admin Log In</a></div>}
+        {isAdmin && <div><button onClick = {logout}>Log Out</button></div>}
     </footer>
     
     </>)

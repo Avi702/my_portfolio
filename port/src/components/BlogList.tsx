@@ -1,9 +1,8 @@
 import BlogCard from './BlogCard'
 import './BlogList.css'
-
 interface Post {
     id: number
-    date: string
+    created_at: number
     image: string
     subject: string
     message: string
@@ -13,7 +12,7 @@ function BlogList({ posts } : {posts:Post[]}){
     {posts.map(post => 
     <BlogCard key ={post.id} 
     image = {post.image}
-    date = {post.date}
+    date = {new Date(post.created_at * 1000).toLocaleDateString()}
     subject = {post.subject}
     message = {post.message}/>)}
     </div>)

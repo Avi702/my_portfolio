@@ -1,6 +1,8 @@
 import express from 'express'
 import { Resend } from 'resend'
 import dotenv from 'dotenv'
+import db from '../db.js'
+import authMiddleware from '../middleware.js'
 dotenv.config()
 const router = express.Router()
 //Contact Route
@@ -18,8 +20,22 @@ router.post('/api/contact', async (req,res)=>{
 })
 
 //Blogs
-router.get('/blogs', (req,res)=>{
+router.post('/api/admin/adminBlogPost', authMiddleware, async (req,res)=>{
+    try{
+    const {thesubject,msg} = req.body
+    const insertPost = db.prepare(`INSERT INTO blogs(image,subject,message)
+        VALUES(?, ?, ?)`).run(null,thesubject,msg)
+    res.sendStatus(201)
+    }catch(err){
+        console.error('Insert failed:',err)
+        res.send(500).json({error: 'Failed to create post'})
+    }
+})
 
+router.get('/api/Blog', (req, res)=>{
+    const getBlogs = db.prepare(`SELECT * from blogs ORDER BY created_at DESC`)
+    const blogs = getBlogs.all()
+    res.json(blogs)
 })
 
 export default router

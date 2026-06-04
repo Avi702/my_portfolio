@@ -1,0 +1,35 @@
+.BlogPost main{
+  background-image: url('/paper-bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  color: rgb(217, 119, 87);
+  display:flex;
+  flex-direction:column;
+  margin:10px;
+  justify-content: center;
+  align-items: center;
+  margin-top:0px;
+}
+
+.Post{
+    background-color:white;
+    display:flex;
+    flex-direction:column;
+    padding:25px;
+    border:2px solid black;
+}
+.Post button{
+  margin-top:10px;
+}
+.Post h3{
+    align-content: center;
+}
+
+.Post .image-preview{
+    display:flex;
+    padding-left:50px;
+    justify-content: center;
+    align-items: center;
+}

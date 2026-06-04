@@ -7,9 +7,9 @@ interface BlogCardProps{
 }
 function BlogCard({date, image, subject, message}: BlogCardProps){
     return(<div className = "card">
-                <div className="image">
-                    <img src={image}></img>
-                </div>
+                {image && <div className="image">
+                    <img src={image} />
+                </div>}
                 <div className="description">
                     <small>{date}</small>
                     <h3>{subject}</h3>
