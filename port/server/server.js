@@ -10,7 +10,6 @@ const app = express()
 const PORT = 8000
 app.use(cors())
 app.use(express.json())
-app.use(authMiddleware)
 app.use(blogRoutes)
 app.use(authRoutes)
 

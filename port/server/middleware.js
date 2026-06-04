@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
 dotenv.config()
 function authMiddleware(req,res,next){
-    const token = req.headers['authorization']
+    const token = req.headers.authorization?.replace('Bearer ', '')
     if(!token){
         return res.status(401).json({message:'No token provided'})
     }

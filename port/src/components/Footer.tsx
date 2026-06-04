@@ -12,7 +12,7 @@ function Footer(){
         <p>Email: avneet.sehgal72@gmail.com</p>
         </div>
 
-        {!isAdmin && <div><a href = "./admin/AdminLogin">Admin Log In</a></div>}
+        {!isAdmin && <div><button><a href = "./admin/AdminLogin">Admin Log In</a></button></div>}
         {isAdmin && <div><button onClick = {logout}>Log Out</button></div>}
     </footer>
     
