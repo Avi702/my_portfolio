@@ -86,11 +86,6 @@ body{
   letter-spacing: 1px;
 }
 
-/* simple fade-in used for the project cards */
-@keyframes fadeIn{
-  from{ opacity: 0; }
-  to{ opacity: 1; }
-}
 
 /* View All button */
 .App main button{
