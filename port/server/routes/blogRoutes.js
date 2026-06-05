@@ -32,24 +32,26 @@ router.post('/api/admin/adminBlogPost', authMiddleware, async (req,res)=>{
     }
 })
 
-
+//fetch all current posts from db
 router.get('/api/Blog', (req, res)=>{
     const getBlogs = db.prepare(`SELECT * FROM blogs ORDER BY created_at DESC`)
     const blogs = getBlogs.all()
     res.json(blogs)
 })
-
+//Add likes counter
 router.patch('/api/:id/BlogLikes', (req,res)=>{
     const {id} = req.params
     const addLike = db.prepare(`UPDATE blogs SET likes = likes + 1 WHERE id = ?`).run(id)
     const updated = db.prepare(`SELECT likes FROM blogs WHERE id = ?`).get(id)
     res.json({likes: updated.likes})
 })
+//Delete a given post
 router.delete('/api/admin/AdminDelete/:id', authMiddleware, (req,res)=>{
         const {id} = req.params
         const deletePost = db.prepare(`DELETE FROM blogs WHERE id = ?`).run(id)
         res.sendStatus(204)
 })
+
 router.get('/api/admin/AdminEdit/:id',(req,res)=>{
     const {id} = req.params
     const post = db.prepare(`SELECT * FROM blogs WHERE id = ?`).get(id)
@@ -59,8 +61,7 @@ router.put('/api/admin/AdminEdit/:id', authMiddleware, (req,res)=>{
     const {id} = req.params
     const {subject,message} = req.body
     db.prepare('UPDATE blogs SET subject = ?, message = ? WHERE id = ?').run(subject,message,id)
-    const updatedPost = db.prepare(`SELECT * FROM blogs WHERE id = ?`).get(id)
-    res.json(updatedPost)
+    res.sendStatus(204)
 })
 
 

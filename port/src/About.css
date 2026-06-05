@@ -1,0 +1,82 @@
+.About header{
+  background:linear-gradient(135deg,white,orange);
+  color: rgb(217, 119, 87);
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+}
+header h1{
+  font-size: 75px;
+}
+.About main{
+  background-color: gray;
+  background-image: url('/paper-bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  color: rgb(217, 119, 87);
+  display:flex;
+  flex-direction:column;
+  margin:10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top:-1px;
+}
+.About body{
+  margin: 0px;
+}
+
+/* each block of content on the page (story, skills, resume) */
+.about-section{
+  width: 75%;
+  margin-top: 30px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease both;
+}
+/* gentle fade-in for each section as the page loads */
+@keyframes fadeInUp{
+  from{ opacity: 0; transform: translateY(15px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+/* row that holds the three skill cards side by side */
+.skills-row{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* row that holds the experience cards side by side */
+.exp-row{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* skill and experience cards share the same look */
+.skill-card, .exp-card{
+  border: 2px solid rgb(217, 119, 87);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 300px;
+  padding: 15px;
+  transition: 0.2s;
+}
+/* lift the card a little and add a shadow on hover */
+.skill-card:hover, .exp-card:hover{
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+section{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
