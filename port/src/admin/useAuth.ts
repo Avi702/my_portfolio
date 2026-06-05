@@ -16,6 +16,7 @@ useEffect(()=>{
 function logout(){
     localStorage.removeItem('token')
     setAdmin(false)
+    window.location.reload()
 }
 return {isAdmin, logout}
 }

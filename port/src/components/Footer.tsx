@@ -13,7 +13,7 @@ function Footer(){
         </div>
 
         {!isAdmin && <div><button><a href = "./admin/AdminLogin">Admin Log In</a></button></div>}
-        {isAdmin && <div><button onClick = {logout}>Log Out</button></div>}
+        {isAdmin && <div><button onClick = {logout} >Log Out</button></div>}
     </footer>
     
     </>)

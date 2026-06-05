@@ -15,7 +15,8 @@ db.exec(`CREATE TABLE IF NOT EXISTS blogs(
         created_at INTEGER NOT NULL DEFAULT (strftime('%s','now')),
         image TEXT,
         subject TEXT NOT NULL,
-        message TEXT NOT NULL)`)
+        message TEXT NOT NULL,
+        likes INTEGER NOT NULL DEFAULT 0)`)
 
 const adminUsername = process.env.ADMIN
 const adminPassword = process.env.ADMIN_PASSWORD

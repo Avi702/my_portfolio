@@ -11,6 +11,7 @@ import Contact from './Contact'
 import Blog from './Blog'
 import AdminPost from './admin/AdminPost'
 import AdminLogin from './admin/AdminLogin'
+import AdminEdit from './admin/AdminEdit'
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Navbar />
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/contact" element = {<Contact />} />
       <Route path="/admin/AdminPost" element={<AdminPost />} />
       <Route path="/admin/AdminLogin" element={<AdminLogin />} />
+      <Route path='/admin/AdminEdit/:id' element={<AdminEdit />}/>
     </Routes>
     <Footer />
   </BrowserRouter>

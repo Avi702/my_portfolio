@@ -6,15 +6,18 @@ interface Post {
     image: string
     subject: string
     message: string
+    likes: number
 }
 function BlogList({ posts } : {posts:Post[]}){
     return(<div className = 'alist'>
     {posts.map(post => 
     <BlogCard key ={post.id} 
+    id = {post.id}
     image = {post.image}
     date = {new Date(post.created_at * 1000).toLocaleDateString()}
     subject = {post.subject}
-    message = {post.message}/>)}
+    message = {post.message}
+    likes = {post.likes}/>)}
     </div>)
 }
 
