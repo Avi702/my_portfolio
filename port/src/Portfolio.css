@@ -22,20 +22,22 @@
   height:325px;
   width:1000px;
   gap:10px;
+  border-radius: 8px;
+  transition:0.2s;
 }
 .portfolio-page .box:hover{
-  transform:scalex(1.05);
-  transition:1s;
+  transform:scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-page .image{
   display:flex;
   flex-direction:row;
-  align-items: flex-start;
+  align-items: center;
 
 }
 .portfolio-page img{
-  height:325px;
+  height:310px;
   width:500px;
 }
 .portfolio-page .description{
@@ -46,11 +48,27 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+/* row of skill tags under each project */
+.portfolio-page .tags{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+}
+/* one skill tag pill */
+.portfolio-page .tag{
+  background-color: rgb(217, 119, 87);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
 .portfolio-page main{
-  background-image: url('/paper-bg.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--paper-color);
+  background-image: var(--paper-texture);
+  background-repeat: repeat;
   min-height: 100vh;
   color: rgb(217, 119, 87);
   display:flex;
@@ -59,4 +77,20 @@
   justify-content: flex-start;
   align-items: center;
   margin-top:-1px;
+}
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .portfolio-page header h1{ font-size: 40px; }
+  .portfolio-page .box{
+    width: 92%;
+    height: auto;
+    flex-direction: column;
+  }
+  .portfolio-page .image{ width: 100%; }
+  .portfolio-page img,
+  .portfolio-page iframe{
+    width: 100%;
+    height: auto;
+  }
+  .portfolio-page iframe{ aspect-ratio: 16 / 9; }
 }

@@ -3,23 +3,20 @@ function App() {
   return (
     <>
     <div className='App'>
-    {/* top banner with my name and photo */}
     <header>
       <div>
         <h1>Avneet Aurora</h1>
           <p>Honors Computer Engineering Student at the University of Delaware</p>
           <p>Class of 2029</p>
-          {/* quick tagline of what I focus on */}
           <p className="tagline">Full-Stack Development · Machine Learning · API Design</p>
+          <p className="availability">Open to Summer 2027 software & machine learning internships</p>
       </div>
       <div><img src='/avneet.png'></img></div>
     </header>
     <main>
-        {/* short welcome, the full details live on the About page */}
         <h1>Welcome</h1>
         <p>Hi, I'm Avneet! I'm a Computer Engineering student who loves building full-stack apps and working on machine learning research. Take a look at some of my favorite projects below.</p>
         <a className="about-link" href="./about">More about me →</a>
-        {/* a few favorite projects, click View All to see the rest */}
         <h1>Highlights</h1>
         <div className="highlights-row">
         <div className='highlights'>

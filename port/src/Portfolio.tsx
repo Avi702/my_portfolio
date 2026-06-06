@@ -21,6 +21,11 @@ function portfolio(){
                 <div className ="description">
                     <h3>SquatBuddy</h3>
                     <p>An AI-powered powerlifting coach built at HenHacks 2026 that uses an LSTM Autoencoder to analyze squat form frame-by-frame from raw video. Built on a real-time video processing pipeline with OpenCV, it delivers joint-specific biomechanical feedback across the full kinetic chain.</p>
+                    {/* key skills I learned on this project */}
+                    <div className="tags">
+                        <span className="tag">Deep Learning</span>
+                        <span className="tag">Computer Vision</span>
+                    </div>
                     <a href="https://devpost.com/software/squatbuddy">Link to Devpost</a>
                 </div>
             </div>
@@ -31,6 +36,11 @@ function portfolio(){
                 <div className="description">
                     <h3>Decora AI</h3>
                     <p>A full-stack AI interior-design platform built with React/Next.js and TypeScript. It uses a Supabase backend for auth, database, and storage, plus a Stripe-based credit system, all deployed serverless on Vercel.</p>
+                    {/* key skills I learned on this project */}
+                    <div className="tags">
+                        <span className="tag">Full-Stack Development</span>
+                        <span className="tag">API Design</span>
+                    </div>
                     <a href="https://www.decora.club">Link to Decora</a>
                 </div>
             </div>
@@ -41,6 +51,11 @@ function portfolio(){
                 <div className="description">
                     <h3>Task AI</h3>
                     <p>A Python web app for college students to schedule study sessions around their classes and activities, using Google Gemini for smart scheduling recommendations. Won Best Functional Implementation at the UD Honors Hackathon.</p>
+                    {/* key skills I learned on this project */}
+                    <div className="tags">
+                        <span className="tag">LLM Integration</span>
+                        <span className="tag">Python</span>
+                    </div>
                     <a href="https://devpost.com/software/taskai-vjx8cl">Link to Devpost</a>
                 </div>
             </div>
@@ -51,6 +66,11 @@ function portfolio(){
                 <div className="description">
                     <h3>Rasberry-PI: Etch a Sketch</h3>
                     <p>A digital Etch a Sketch built on a Raspberry Pi, reading input from potentiometers to draw on screen. A fun hardware project to practice working with the Pi's GPIO pins.</p>
+                    {/* key skills I learned on this project */}
+                    <div className="tags">
+                        <span className="tag">Embedded Systems</span>
+                        <span className="tag">Hardware I/O</span>
+                    </div>
                 </div>
             </div>
             <div className = "box">
@@ -60,6 +80,11 @@ function portfolio(){
                 <div className="description">
                     <h3>Simple Ping Pong: VHDL</h3>
                     <p>A simple Pong game written in VHDL and run on an FPGA, with the paddles and ball drawn to a VGA display. A hands-on way to learn digital logic design.</p>
+                    {/* key skills I learned on this project */}
+                    <div className="tags">
+                        <span className="tag">Digital Logic Design</span>
+                        <span className="tag">FPGA</span>
+                    </div>
                 </div>
             </div>
         </main>

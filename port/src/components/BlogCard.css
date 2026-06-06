@@ -42,3 +42,17 @@
   display:flex;
   align-items:flex-start
 }
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .card{
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .card img{
+    width: 100%;
+    height: auto;
+  }
+  .card .description{ padding-left: 0; }
+}

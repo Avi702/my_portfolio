@@ -20,3 +20,7 @@
 .alist::-webkit-scrollbar-track {
   background: transparent;
 }
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .alist{ width: 95%; }
+}

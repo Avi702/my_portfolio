@@ -11,10 +11,9 @@
 }
 
 .blog-page main{
-  background-image: url('/paper-bg.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--paper-color);
+  background-image: var(--paper-texture);
+  background-repeat: repeat;
   min-height: 100vh;
   color: rgb(217, 119, 87);
   display:flex;
@@ -30,4 +29,10 @@
     height:max-content;
     width:1000px;
     background-color: white;
+}
+
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .blog-page header h1{ font-size: 40px; }
+  .blog-page .blogs{ width: 95%; }
 }

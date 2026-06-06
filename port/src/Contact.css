@@ -10,10 +10,9 @@
   padding-bottom:0px;
 }
 .contact-page main{
-  background-image: url('/paper-bg.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--paper-color);
+  background-image: var(--paper-texture);
+  background-repeat: repeat;
   min-height: 100vh;
   color: rgb(217, 119, 87);
   display:flex;
@@ -36,4 +35,17 @@
 }
 .Contact-Form h3{
     align-content: center;
+}
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .contact-page header h1{ font-size: 40px; }
+  .Contact-Form{
+    width: 92%;
+    box-sizing: border-box;
+  }
+  .Contact-Form input,
+  .Contact-Form textarea{
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

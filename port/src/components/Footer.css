@@ -6,3 +6,14 @@ footer{
     justify-content: space-around;
     padding:0px;
 }
+
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  footer{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+}

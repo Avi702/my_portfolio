@@ -1,8 +1,7 @@
 .Login-Form main{
-  background-image: url('/paper-bg.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--paper-color);
+  background-image: var(--paper-texture);
+  background-repeat: repeat;
   min-height: 100vh;
   color: rgb(217, 119, 87);
   display:flex;
@@ -26,3 +25,16 @@
   margin-top:10px;
 }
 
+
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .adminLogin{
+    width: 92%;
+    height: auto;
+    box-sizing: border-box;
+  }
+  .adminLogin input{
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

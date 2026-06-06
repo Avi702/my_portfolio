@@ -22,3 +22,20 @@
     color: rgb(217, 119, 87);
 }
 
+
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .navbar{
+    position: static;
+    margin: 8px auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+  }
+  .nav-links{
+    gap: 1rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

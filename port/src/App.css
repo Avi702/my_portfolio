@@ -13,11 +13,9 @@ header h1{
   font-size: 75px;
 }
 .App main{
-  background-color: gray;
-  background-image: url('/paper-bg.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--paper-color);
+  background-image: var(--paper-texture);
+  background-repeat: repeat;
   min-height: 100vh;
   color: rgb(217, 119, 87);
   display:flex;
@@ -59,7 +57,6 @@ body{
   transition: 0.2s;
   animation: fadeIn 0.5s ease both;
 }
-/* keep the title at the top of each card */
 .highlights h3{
   margin-top: 0;
 }
@@ -73,6 +70,16 @@ body{
 /* small tagline under my name in the header */
 .tagline{
   font-style: italic;
+}
+
+.availability{
+  display: inline-block;
+  width: fit-content;
+  background-color: rgb(217, 119, 87);
+  color: white;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
 }
 /* link over to the about page */
 .about-link{
@@ -106,4 +113,25 @@ body{
 }
 .App main button:hover a{
   color: white;
+}
+
+/* ---- phone / small screens ---- */
+@media (max-width: 768px){
+  .App header{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .App header h1{ font-size: 40px; }
+  .App header img{
+    width: 200px;
+    height: auto;
+    padding-right: 0;
+  }
+  .availability{ white-space: normal; }
+  .highlights{
+    height: auto;
+    width: 90%;
+    max-width: 320px;
+  }
 }
