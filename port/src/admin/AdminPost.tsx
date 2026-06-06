@@ -3,6 +3,7 @@ import './AdminPost.css'
 import {useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {API_URL} from '../api'
+import {refreshBlogs} from '../blogCache'
 function AdminPost(){
     const navigate = useNavigate()
     const {isAdmin} = useAuth()
@@ -34,6 +35,7 @@ function AdminPost(){
                 URL.revokeObjectURL(previewUrl)
             }     
             settheSubject(''); setMsg(''); setPreviewUrl('')
+            refreshBlogs()   // clear cache so the new post shows up
             navigate('/Blog',{replace: true})
         }else{
             alert('Failed')

@@ -11,6 +11,12 @@ import Blog from './Blog'
 import AdminPost from './admin/AdminPost'
 import AdminLogin from './admin/AdminLogin'
 import AdminEdit from './admin/AdminEdit'
+import { prefetchBlogs } from './blogCache'
+
+// start loading blog posts (and waking the backend) the moment the site opens,
+// so the data is ready before anyone navigates to the Blog page
+prefetchBlogs()
+
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Navbar />

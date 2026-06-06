@@ -3,24 +3,16 @@ import {useEffect, useState} from 'react'
 import {useAuth} from './admin/useAuth'
 import BlogList from './components/BlogList'
 import {Link} from 'react-router-dom'
-import {API_URL} from './api'
+import {prefetchBlogs} from './blogCache'
 
 function Blog(){
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState<any[]>([])
     const [loading, setLoading] = useState(true)
     async function getData(){
-        try{
-            const res = await fetch(`${API_URL}/api/Blog`)
-            if(res.ok){
-                const data = await res.json()
-                setPosts(data)
-            }
-        }catch(err){
-            console.error('Failed to fetch blogs')
-            return
-        }finally{
-            setLoading(false)
-        }
+        // Waits for function prefetchBlogs written in a seperate file
+        const data = await prefetchBlogs()
+        setPosts(data)
+        setLoading(false)
     }
     useEffect(()=>{
         getData()
@@ -33,7 +25,7 @@ function Blog(){
             <p>See what I am up to!</p>
         </header>
         <main>
-            {loading ?(<p>Loading...</p>) : posts.length === 0 ?(
+            {loading ?(<p>Loading, may take 10-20sec...</p>) : posts.length === 0 ?(
             <p>No posts yet!</p>):(
             <BlogList posts= {posts}/>
             )}

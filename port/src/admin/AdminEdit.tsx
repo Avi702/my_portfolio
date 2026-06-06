@@ -3,6 +3,7 @@ import {useAuth} from './useAuth'
 import {useEffect, useState} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import {API_URL} from '../api'
+import {refreshBlogs} from '../blogCache'
 
 function AdminEdit(){
     const navigate = useNavigate()
@@ -39,6 +40,7 @@ function AdminEdit(){
         })
         if(res.ok){
             setSubject('');setMessage('')
+            refreshBlogs()   // clear cache so the change shows up
             navigate('/Blog',{replace: true})
         }else{
             alert('Failed')
@@ -54,6 +56,7 @@ function AdminEdit(){
         })
         if(res.ok){
             setSubject('');setMessage('')
+            refreshBlogs()   // clear cache so the change shows up
             navigate('/Blog',{replace: true})
         }else{
             alert('Failed')
