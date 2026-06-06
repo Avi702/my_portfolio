@@ -7,11 +7,11 @@ dotenv.config()
 const router = express.Router()
 
 //authentication
-router.post("/api/admin/adminLogin",(req,res)=>{
+router.post("/api/admin/adminLogin", async (req,res)=>{
     const {username,password} = req.body
     try{
-        const getAdmin = db.prepare(`SELECT * FROM admin WHERE username = ?`)
-        const admin = getAdmin.get(username)
+        const result = await db.execute({sql:`SELECT * FROM admin WHERE username = ?`, args:[username]})
+        const admin = result.rows[0]
         if(!admin){
             return res.status(404).send({message:'User not found'})
         }

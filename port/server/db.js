@@ -1,16 +1,21 @@
 import 'dotenv/config'
-import {DatabaseSync} from 'node:sqlite'
+import { createClient } from '@libsql/client'
 import bcrypt from 'bcrypt'
 
-const db = new DatabaseSync('./blog.db')
+// in production this points at Turso; locally it falls back to a local SQLite file
+const db = createClient({
+  url: process.env.TURSO_DATABASE_URL || 'file:blog.db',
+  authToken: process.env.TURSO_AUTH_TOKEN,
+})
 
-db.exec(`CREATE TABLE IF NOT EXISTS admin(
+// create the tables if they don't already exist
+await db.execute(`CREATE TABLE IF NOT EXISTS admin(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT UNIQUE NOT NULL,
         password_hash TEXT NOT NULL
         )`)
 
-db.exec(`CREATE TABLE IF NOT EXISTS blogs(
+await db.execute(`CREATE TABLE IF NOT EXISTS blogs(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         created_at INTEGER NOT NULL DEFAULT (strftime('%s','now')),
         image TEXT,
@@ -18,15 +23,21 @@ db.exec(`CREATE TABLE IF NOT EXISTS blogs(
         message TEXT NOT NULL,
         likes INTEGER NOT NULL DEFAULT 0)`)
 
+// seed the admin account from env vars the first time the server runs
 const adminUsername = process.env.ADMIN
 const adminPassword = process.env.ADMIN_PASSWORD
 
 if (adminUsername && adminPassword) {
-  const exists = db.prepare('SELECT 1 FROM admin WHERE username = ?').get(adminUsername)
-  if (!exists) {
+  const existing = await db.execute({
+    sql: 'SELECT 1 FROM admin WHERE username = ?',
+    args: [adminUsername],
+  })
+  if (existing.rows.length === 0) {
     const hash = bcrypt.hashSync(adminPassword, 10)
-    db.prepare('INSERT INTO admin (username, password_hash) VALUES (?, ?)')
-      .run(adminUsername, hash)
+    await db.execute({
+      sql: 'INSERT INTO admin (username, password_hash) VALUES (?, ?)',
+      args: [adminUsername, hash],
+    })
   }
 }
 
