@@ -1,4 +1,4 @@
-import './contact.css'
+import './Contact.css'
 import { useState } from 'react'
 import { API_URL } from './api'
 function contact(){
