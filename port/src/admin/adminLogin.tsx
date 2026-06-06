@@ -1,11 +1,12 @@
 import {useState} from 'react'
 import './AdminLogin.css'
+import {API_URL} from '../api'
 function AdminLogin(){
     const [username,setUserName] = useState('')
     const [password,setPassword] = useState('')
     async function handleLogin(e : React.FormEvent){
         e.preventDefault()
-        const res = await fetch('http://localhost:8000/api/admin/adminLogin',{
+        const res = await fetch(`${API_URL}/api/admin/adminLogin`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

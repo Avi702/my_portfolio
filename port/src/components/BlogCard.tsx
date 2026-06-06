@@ -5,6 +5,7 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import {useAuth} from '../admin/useAuth'
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
+import {API_URL} from '../api'
 interface BlogCardProps{
     id: number
     date: string
@@ -18,7 +19,7 @@ function BlogCard({id, date, image, subject, message, likes}: BlogCardProps){
     const [like, setLike] = useState(likes)
     async function handleLikes(){
         setLike(prev => prev + 1)
-        const res = await fetch(`http://localhost:8000/api/${id}/BlogLikes`,{
+        const res = await fetch(`${API_URL}/api/${id}/BlogLikes`,{
             method:'PATCH'
         })
         if(res.ok){

@@ -2,6 +2,7 @@ import {useAuth} from './useAuth'
 import './AdminPost.css'
 import {useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
+import {API_URL} from '../api'
 function AdminPost(){
     const navigate = useNavigate()
     const {isAdmin} = useAuth()
@@ -19,7 +20,7 @@ function AdminPost(){
             formData.append('image',imageFile)
         }
         */
-        const res = await fetch('http://localhost:8000/api/admin/adminBlogPost',{
+        const res = await fetch(`${API_URL}/api/admin/adminBlogPost`,{
             method: 'POST',
             headers:{
             'Content-Type':'application/json',

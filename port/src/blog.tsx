@@ -3,13 +3,14 @@ import {useEffect, useState} from 'react'
 import {useAuth} from './admin/useAuth'
 import BlogList from './components/BlogList'
 import {Link} from 'react-router-dom'
+import {API_URL} from './api'
 
 function Blog(){
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(true)
     async function getData(){
         try{
-            const res = await fetch('http://localhost:8000/api/Blog')
+            const res = await fetch(`${API_URL}/api/Blog`)
             if(res.ok){
                 const data = await res.json()
                 setPosts(data)

@@ -2,6 +2,7 @@ import './AdminEdit.css'
 import {useAuth} from './useAuth'
 import {useEffect, useState} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
+import {API_URL} from '../api'
 
 function AdminEdit(){
     const navigate = useNavigate()
@@ -13,7 +14,7 @@ function AdminEdit(){
     useEffect(()=>{
         async function loadPost(){
             try{
-                const res = await fetch(`http://localhost:8000/api/admin/AdminEdit/${id}`)
+                const res = await fetch(`${API_URL}/api/admin/AdminEdit/${id}`)
                 if(res.ok){
                     const post = await res.json()
                     setSubject(post.subject)
@@ -28,7 +29,7 @@ function AdminEdit(){
     },[id])
     ///api/admin/AdminEdit/:id
     async function handleEdit(){
-        const res = await fetch(`http://localhost:8000/api/admin/AdminEdit/${id}`,{
+        const res = await fetch(`${API_URL}/api/admin/AdminEdit/${id}`,{
             method:'PUT',
             headers:{
                 'Content-Type':'application/json',
@@ -44,7 +45,7 @@ function AdminEdit(){
         }
     }
     async function handleDelete(){
-        const res = await fetch(`http://localhost:8000/api/admin/AdminDelete/${id}`,{
+        const res = await fetch(`${API_URL}/api/admin/AdminDelete/${id}`,{
             method:'DELETE',
             headers:{
                 'Content-Type':'application/json',

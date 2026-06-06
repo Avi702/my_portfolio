@@ -20,7 +20,7 @@ function portfolio(){
                 </div>
                 <div className ="description">
                     <h3>SquatBuddy</h3>
-                    <p> using an LSTM Autoencoder to analyze squat form frame-by-frame from raw video</p>
+                    <p>An AI-powered powerlifting coach built at HenHacks 2026 that uses an LSTM Autoencoder to analyze squat form frame-by-frame from raw video. Built on a real-time video processing pipeline with OpenCV, it delivers joint-specific biomechanical feedback across the full kinetic chain.</p>
                     <a href="https://devpost.com/software/squatbuddy">Link to Devpost</a>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import './contact.css'
 import { useState } from 'react'
+import { API_URL } from './api'
 function contact(){
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -7,7 +8,7 @@ function contact(){
     const [message, setMessage] = useState('')
     async function handleSubmit(e: React.FormEvent){
         e.preventDefault()
-        const res = await fetch('http://localhost:8000/api/contact',{
+        const res = await fetch(`${API_URL}/api/contact`,{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({name, email, subject, message}),
