@@ -12,7 +12,7 @@ import AdminPost from './admin/AdminPost'
 import AdminLogin from './admin/AdminLogin'
 import AdminEdit from './admin/AdminEdit'
 import { prefetchBlogs } from './blogCache'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 // start loading blog posts (and waking the backend) the moment the site opens,
 // so the data is ready before anyone navigates to the Blog page
@@ -32,5 +32,6 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/admin/AdminEdit/:id' element={<AdminEdit />}/>
     </Routes>
     <Footer />
+    <Analytics />
   </BrowserRouter>
 )
