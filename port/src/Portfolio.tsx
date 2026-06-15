@@ -63,7 +63,7 @@ function portfolio(){
             </div>
             <div className = "box">
                 <div className="image">
-                    <img src="./Decora.png"></img>
+                    <video src="/decora.mp4"></video>
                 </div>
                 <div className="description">
                     <h3>Decora AI</h3>
