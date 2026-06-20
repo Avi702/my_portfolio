@@ -74,7 +74,7 @@ function About(){
                 <h2>Resume</h2>
                 <div style={{ width: '100%', height: '800px', border:'2px solid black'}}>
                  <iframe
-                    src="/Avneet__resume_1copy.pdf"
+                    src="/Avneet_resume_1copy.pdf"
                     title="Avneet's resume"
                     width="100%"
                     height="100%">
