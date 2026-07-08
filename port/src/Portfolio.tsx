@@ -8,6 +8,22 @@ function portfolio(){
             <p>A list of my favorite projects that demonstrates my understanding and passion of software and hardware programming.</p>
         </header>
         <main>
+             <div className = "box">
+                <div className="image">
+                    <video src="/AI_GroceryShopper.mp4" controls></video>
+                </div>
+                <div className="description">
+                    <h3>AI Grocery Shopper</h3>
+                    <p>A full-stack inventory system that turns a Raspberry Pi or phone photo of your fridge into a structured, price-checked shopping list. A four-agent Claude pipeline analyzes items through a self-correcting review loop, tracks scan history to find what's running low, and runs live web searches for pricing. Built with a Python/FastAPI backend on AWS (RDS + S3), a React Native/Expo app, and Raspberry Pi hardware.</p>
+                    <div className="tags">
+                        <span className="tag">Multi-Agent AI</span>
+                        <span className="tag">Full-Stack Development</span>
+                        <span className="tag">Computer Vision</span>
+                        <span className="tag">Embedded Systems</span>
+                    </div>
+                    <a href="https://github.com/Avi702/AI_GroceryShopper">Link to Repo</a>
+                </div>
+            </div>
             <div className = "box">
                 <div className="image">
                 <iframe width = "500"
