@@ -72,13 +72,18 @@ function About(){
             {/* my resume embedded as a pdf */}
             <section className="about-section">
                 <h2>Resume</h2>
-                <div style={{ width: '100%', height: '800px', border:'2px solid black'}}>
-                 <iframe
-                    src="/Avneet_resume_1.pdf"
-                    title="Avneet's resume"
-                    width="100%"
-                    height="100%">
-                </iframe>
+                <a className="resume-download" href="/Avneet_resume_1.pdf" target="_blank" rel="noopener noreferrer">
+                    Open resume in a new tab
+                </a>
+                <div className="resume-frame">
+                    <object
+                        data="/Avneet_resume_1.pdf"
+                        type="application/pdf"
+                        width="100%"
+                        height="100%"
+                    >
+                        <p>Your browser does not support embedded PDFs. <a href="/Avneet_resume_1.pdf">Download the resume</a>.</p>
+                    </object>
                 </div>
             </section>
         </main>
