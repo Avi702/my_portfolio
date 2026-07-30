@@ -10,6 +10,23 @@ function portfolio(){
         <main>
              <div className = "box">
                 <div className="image">
+                    <video src="/Messaging-App.mp4" controls></video>
+                </div>
+                <div className="description">
+                    <h3>Messaging Application</h3>
+                    <p>*Built with Michael Rothkopf* A real-time mobile messaging app built with React Native/Expo and TypeScript, supporting one-on-one and group chats with instant message delivery over Socket.IO. It handles JWT authentication with automatic token refresh and secure storage, user discovery by display name, and protected routes that retry requests on expired tokens. I built the frontend and worked off a forked Node backend originally by Michael Rothkopf.</p>
+                    <div className="tags">
+                        <span className="tag">Full-Stack Development</span>
+                        <span className="tag">Real-Time Systems</span>
+                        <span className="tag">Mobile Development</span>
+                    </div>
+                    <a href="https://github.com/Avi702/messaging-application-frontend">Link to Frontend</a>
+                    <a href="https://github.com/Avi702/avneet-michael-messaging-backend">Link to Backend Fork</a>
+                    <a href="https://github.com/michaelrothkopf/messaging-application-backend">Original Backend(Michael)</a>
+                </div>
+            </div>
+             <div className = "box">
+                <div className="image">
                     <video src="/AI_GroceryShopper.mp4" controls></video>
                 </div>
                 <div className="description">
